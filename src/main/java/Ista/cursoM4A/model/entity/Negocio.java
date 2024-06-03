@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -51,9 +53,20 @@ public class Negocio implements Serializable{
 	private String Referencia;
 	private int Num_telefono;
 	
+
+    @ManyToOne
+    @JoinColumn(name = "socio_id")
+    private Socio socio;
 	
 	
 	
+	
+	public Socio getSocio() {
+		return socio;
+	}
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
 	public int getRuc() {
 		return Ruc;
 	}
