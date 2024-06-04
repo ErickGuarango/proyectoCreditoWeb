@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -37,6 +39,10 @@ public class Credito implements Serializable{
 	@Column(name = "fecha_creaccion")
 	@Temporal(TemporalType.DATE)
 	private Date fecha_creaccion;
+	
+	@ManyToOne
+	    @JoinColumn(name = "socio_id")
+	    private Socio socio;
 	
 	@PrePersist
 	public void prePersist() {

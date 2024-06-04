@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 import java.io.Serializable;
 
 @Entity
@@ -17,6 +20,11 @@ public class Inmobiliario implements Serializable {
     private Double valor;
     private String estaHipotecado;
     private String institucion;
+    
+    
+	@ManyToOne
+    @JoinColumn(name = "socio_id")
+    private Socio socio;
 
     // Getters y Setters
     public Long getId() {
