@@ -74,4 +74,10 @@ public class Inmobiliario implements Serializable {
     public void setInstitucion(String institucion) {
         this.institucion = institucion;
     }
+    public Socio getSocio() {
+		return socio;
+	}
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
 }

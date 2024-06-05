@@ -105,6 +105,12 @@ public class Conyugue implements Serializable {
 	public void setArea(String area) {
 		this.area = area;
 	}
+	public Socio getSocio() {
+		return socio;
+	}
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
 
     
 }

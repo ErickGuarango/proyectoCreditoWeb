@@ -81,4 +81,10 @@ public class Empresa implements Serializable {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+    public Socio getSocio() {
+		return socio;
+	}
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
 }
