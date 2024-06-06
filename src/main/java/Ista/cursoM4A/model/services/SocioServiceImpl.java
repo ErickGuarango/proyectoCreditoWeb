@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import Ista.cursoM4A.model.entity.Conyugue;
 import Ista.cursoM4A.model.entity.Socio;
 import Ista.cursoM4A.model.dao.ISocioDao;
 
@@ -21,8 +22,7 @@ public class SocioServiceImpl implements ISocioService {
     @Override
     @Transactional(readOnly = true)
     public List<Socio> findAll() {
-        return StreamSupport.stream(socioDao.findAll().spliterator(), false)
-                            .collect(Collectors.toList());
+    	return (List<Socio>) socioDao.findAll();
     }
 
     @Override

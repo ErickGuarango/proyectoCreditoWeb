@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import Ista.cursoM4A.model.entity.Conyugue;
 import Ista.cursoM4A.model.entity.Empresa;
 import Ista.cursoM4A.model.dao.IEmpresaDao;
 
@@ -21,8 +22,7 @@ public class EmpresaServiceImpl implements IEmpresaService {
     @Override
     @Transactional(readOnly = true)
     public List<Empresa> findAll() {
-        return StreamSupport.stream(empresaDao.findAll().spliterator(), false)
-                            .collect(Collectors.toList());
+    	return (List<Empresa>) empresaDao.findAll();
     }
 
     @Override

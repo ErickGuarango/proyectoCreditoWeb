@@ -21,8 +21,8 @@ public class ConyugueServiceImpl implements IConyugueService {
     @Override
     @Transactional(readOnly = true)
     public List<Conyugue> findAll() {
-        return StreamSupport.stream(conyugueDao.findAll().spliterator(), false)
-                            .collect(Collectors.toList());
+    	return (List<Conyugue>) conyugueDao.findAll();
+
     }
 
     @Override

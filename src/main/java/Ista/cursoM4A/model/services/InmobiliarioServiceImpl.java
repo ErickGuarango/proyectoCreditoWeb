@@ -1,5 +1,6 @@
 package Ista.cursoM4A.model.services;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import Ista.cursoM4A.model.entity.Conyugue;
 import Ista.cursoM4A.model.entity.Inmobiliario;
 import Ista.cursoM4A.model.dao.IInmobiliarioDao;
 
@@ -21,8 +23,7 @@ public class InmobiliarioServiceImpl implements IInmobiliarioService {
     @Override
     @Transactional(readOnly = true)
     public List<Inmobiliario> findAll() {
-        return StreamSupport.stream(inmobiliarioDao.findAll().spliterator(), false)
-                            .collect(Collectors.toList());
+    	return (List<Inmobiliario>) inmobiliarioDao.findAll();
     }
 
     @Override
